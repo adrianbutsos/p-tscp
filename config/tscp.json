@@ -1,0 +1,62 @@
+{
+  "config_version": "1.0",
+  "organization": {
+    "id": "tscp",
+    "name": "The Supply Chain Project",
+    "description": "A US-based nonprofit connecting products and services with NGOs and supply chains.",
+    "audiences": ["NGOs", "volunteers", "supply-chain professionals", "social-impact partners"]
+  },
+  "campaigns": [
+    {
+      "id": "volunteering",
+      "name": "Volunteering",
+      "description": "Show how people can contribute skills, time, and expertise to TSCP's mission.",
+      "priority": "high",
+      "enabled": true,
+      "target_share": 0.6
+    },
+    {
+      "id": "marketplace",
+      "name": "TSCP Marketplace",
+      "description": "Promote the marketplace and the connection of products or services with NGO and supply-chain needs.",
+      "priority": "medium",
+      "enabled": true,
+      "target_share": 0.4
+    }
+  ],
+  "platforms": [
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "enabled": true,
+      "allowed_formats": ["individual_post", "carousel", "reel_vertical_video"]
+    }
+  ],
+  "planning_rules": {
+    "frequency": "monthly",
+    "minimum_posts_per_week": 2,
+    "target_posts_per_week": 3,
+    "maximum_posts_per_week": 4,
+    "calendar_status_on_creation": "draft",
+    "require_benchmark_reference": true
+  },
+  "defaults": {
+    "timezone": "America/La_Paz",
+    "language": "en",
+    "benchmark_lookback_days": 90
+  },
+  "notion": {
+    "enabled": true,
+    "admin_page_url": "https://app.notion.com/p/3d4005c30a7d813fbb29ce01e4263f24?pvs=204",
+    "source_of_truth": "notion",
+    "fallback_files": [
+      "config/tscp.json",
+      "config/benchmark-sources.json"
+    ],
+    "required_databases": [
+      "Benchmark Sources",
+      "Target Audiences",
+      "Active Campaigns"
+    ]
+  }
+}

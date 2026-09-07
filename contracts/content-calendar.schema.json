@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tscp.example/contracts/content-calendar.schema.json",
+  "title": "TSCP Content Calendar Contract",
+  "type": "object",
+  "required": ["contract_version", "calendar", "posts", "validation"],
+  "properties": {
+    "contract_version": {"type": "string"},
+    "calendar": {"type": "object", "required": ["id", "period_start", "period_end", "status"], "properties": {"id": {"type": "string"}, "period_start": {"type": "string", "format": "date"}, "period_end": {"type": "string", "format": "date"}, "status": {"enum": ["draft", "reviewed", "approved", "archived"]}}, "additionalProperties": false},
+    "posts": {"type": "array", "items": {"type": "object", "required": ["post_id", "suggested_date", "platform", "campaign_id", "theme", "format", "idea", "cta", "format_skeleton", "benchmark_references"], "properties": {"post_id": {"type": "string"}, "suggested_date": {"type": "string", "format": "date"}, "platform": {"type": "string"}, "campaign_id": {"type": "string"}, "theme": {"type": "string"}, "strategic_rationale": {"type": "string"}, "format": {"enum": ["individual_post", "reel_vertical_video", "carousel"]}, "idea": {"type": "string"}, "cta": {"type": "string"}, "format_skeleton": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "benchmark_references": {"type": "array", "items": {"type": "string"}, "minItems": 1}}, "additionalProperties": false}},
+    "validation": {"type": "object", "required": ["minimum_weekly_frequency_met", "campaign_distribution_reviewed", "all_posts_have_source_references"], "properties": {"minimum_weekly_frequency_met": {"type": "boolean"}, "campaign_distribution_reviewed": {"type": "boolean"}, "all_posts_have_source_references": {"type": "boolean"}, "notes": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false}
+  },
+  "additionalProperties": false
+}

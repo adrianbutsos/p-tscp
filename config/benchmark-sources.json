@@ -1,0 +1,41 @@
+{
+  "config_version": "1.0",
+  "sources": [
+    {
+      "id": "source-ngo-impact",
+      "name": "NGO and nonprofit impact communicators",
+      "type": "ngo",
+      "description": "Public NGO and nonprofit accounts with clear impact storytelling.",
+      "platforms": ["linkedin", "instagram"],
+      "search_queries": ["NGO impact story", "nonprofit volunteer impact", "humanitarian supply chain"],
+      "enabled": true
+    },
+    {
+      "id": "source-volunteer-organizations",
+      "name": "Volunteer-led organizations",
+      "type": "volunteer_organization",
+      "description": "Organizations communicating volunteer recruitment, recognition, and outcomes.",
+      "platforms": ["linkedin", "instagram"],
+      "search_queries": ["volunteer recruitment nonprofit", "volunteer story organization"],
+      "enabled": true
+    },
+    {
+      "id": "source-supply-chain-impact",
+      "name": "Supply-chain and logistics organizations",
+      "type": "supply_chain",
+      "description": "Organizations connecting logistics, products, procurement, and social impact.",
+      "platforms": ["linkedin"],
+      "search_queries": ["humanitarian logistics", "supply chain social impact", "NGO procurement"],
+      "enabled": true
+    },
+    {
+      "id": "source-social-impact-brands",
+      "name": "Social-impact brand communicators",
+      "type": "social_impact_brand",
+      "description": "Public accounts with reusable storytelling patterns and strong format examples.",
+      "platforms": ["linkedin", "instagram"],
+      "search_queries": ["social impact storytelling nonprofit", "purpose driven organization content"],
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[agents]
+max_threads = 4
+max_depth = 2
+
+[project]
+default_language = "en"
+benchmark_contract = "contracts/benchmark-input.schema.json"
+calendar_contract = "contracts/content-calendar.schema.json"
+
+[mcp_servers.notion]
+url = "https://mcp.notion.com/mcp"

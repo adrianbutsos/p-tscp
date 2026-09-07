@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tscp.example/contracts/benchmark-input.schema.json",
+  "title": "TSCP Benchmark Input Contract",
+  "type": "object",
+  "required": ["contract_version", "benchmark_run", "sources", "observations", "trend_summary"],
+  "properties": {
+    "contract_version": {"type": "string"},
+    "benchmark_run": {
+      "type": "object",
+      "required": ["id", "requested_at", "period_start", "period_end", "trigger"],
+      "properties": {
+        "id": {"type": "string"},
+        "requested_at": {"type": "string", "format": "date-time"},
+        "period_start": {"type": "string", "format": "date"},
+        "period_end": {"type": "string", "format": "date"},
+        "trigger": {"enum": ["scheduled", "on_demand"]}
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "name", "type", "platform", "url", "collected_at", "verification_status"],
+        "properties": {
+          "source_id": {"type": "string"}, "name": {"type": "string"}, "type": {"type": "string"},
+          "platform": {"type": "string"}, "url": {"type": "string", "format": "uri"},
+          "collected_at": {"type": "string", "format": "date-time"},
+          "verification_status": {"enum": ["verified", "partially_verified", "unverified"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["observation_id", "source_id", "published_at", "platform", "url", "content_type", "theme", "summary", "signals", "relevance_to_tscp", "adaptation_notes"],
+        "properties": {
+          "observation_id": {"type": "string"}, "source_id": {"type": "string"},
+          "published_at": {"type": "string", "format": "date"}, "platform": {"type": "string"},
+          "url": {"type": "string", "format": "uri"}, "content_type": {"type": "string"},
+          "theme": {"type": "string"}, "summary": {"type": "string"},
+          "signals": {"type": "object", "additionalProperties": true},
+          "relevance_to_tscp": {"enum": ["high", "medium", "low", "unknown"]},
+          "adaptation_notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "trend_summary": {"type": "array", "items": {"type": "object", "required": ["theme", "evidence_count", "confidence", "recommendation"], "properties": {"theme": {"type": "string"}, "evidence_count": {"type": "integer", "minimum": 1}, "confidence": {"enum": ["high", "medium", "low"]}, "recommendation": {"type": "string"}}, "additionalProperties": true}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Generated benchmark requests and calendars
+data/benchmark/
+output/calendars/
