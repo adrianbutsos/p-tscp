@@ -1,0 +1,5 @@
+import { NextResponse } from "next/server";
+import { z } from "zod";
+import { createClient } from "@/lib/supabase/server";
+const schema = z.object({ name: z.string().min(2).max(120), description: z.string().min(2).max(1000), priority: z.enum(["high", "medium", "low"]).default("medium"), target_share: z.number().min(0).max(1).default(0), enabled: z.boolean().default(true) });
+export async function POST(request: Request) { const supabase = await createClient(); const { data: { user } } = await supabase.auth.getUser(); if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 }); const parsed = schema.safeParse(await request.json()); if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0]?.message || "Invalid input" }, { status: 400 }); const slug = parsed.data.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""); const { data, error } = await supabase.from("campaigns").insert({ ...parsed.data, slug }).select().single(); if (error) return NextResponse.json({ error: error.message }, { status: 400 }); return NextResponse.json({ data }, { status: 201 }); }

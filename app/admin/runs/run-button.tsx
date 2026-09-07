@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react";
+export function RunButton() { const [busy, setBusy] = useState(false); const [message, setMessage] = useState(""); async function run() { setBusy(true); setMessage(""); const response = await fetch("/api/benchmark/runs", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ trigger: "on_demand" }) }); const json = await response.json().catch(() => ({})); setMessage(response.ok ? "Benchmark run started." : (json.error || "Could not start run.")); setBusy(false); } return <div className="actions"><button className="button primary" onClick={run} disabled={busy}>{busy ? "Starting…" : "Start benchmark run"}</button>{message && <span className="muted">{message}</span>}</div>; }

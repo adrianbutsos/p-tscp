@@ -1,5 +1,11 @@
 # TSCP Content Strategy Agent
 
+## Web application
+
+The MVP admin dashboard is a Next.js application with Supabase Auth/Postgres persistence. It supports campaign, audience, source, and benchmark-run administration, with monthly or on-demand benchmark requests. The OpenAI key is used only by the server-side route at `/api/benchmark/runs`.
+
+See [docs/deployment.md](docs/deployment.md) for Vercel environment variables and the one-time Supabase bootstrap step.
+
 An AI agent that plans social media content for **The Supply Chain Project (TSCP)** by combining external benchmarking with a structured, repeatable planning process — so volunteer designers always know what to make, when, and why.
 
 ## 1. Client & Context
