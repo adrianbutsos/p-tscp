@@ -114,3 +114,7 @@ Generated request files are written to `data/benchmark/requests/`. The benchmark
 Notion is the persistent no-code administration layer for campaigns, target audiences, and benchmark sources. Codex is configured globally and at project level with the authenticated Notion MCP server. Agents should read the configured Notion administration page first and use the local JSON files as an explicit fallback when Notion is unavailable.
 
 Administration page: `https://app.notion.com/p/3d4005c30a7d813fbb29ce01e4263f24?pvs=204`
+
+## 12. Repository and Supabase Integration
+
+The project is versioned at `https://github.com/adrianbutsos/p-tscp.git` on the `main` branch. Supabase is intentionally not configured until its project reference is supplied; once available, configure a project-scoped, read-only MCP URL and authenticate it with Codex OAuth.

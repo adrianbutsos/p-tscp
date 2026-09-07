@@ -6,6 +6,10 @@
     "description": "A US-based nonprofit connecting products and services with NGOs and supply chains.",
     "audiences": ["NGOs", "volunteers", "supply-chain professionals", "social-impact partners"]
   },
+  "repository": {
+    "url": "https://github.com/adrianbutsos/p-tscp.git",
+    "default_branch": "main"
+  },
   "campaigns": [
     {
       "id": "volunteering",
