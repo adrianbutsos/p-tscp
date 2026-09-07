@@ -62,5 +62,11 @@
       "Target Audiences",
       "Active Campaigns"
     ]
+  },
+  "supabase": {
+    "project_ref": "hrbqwypclzbfanjdmwpc",
+    "project_url": "https://hrbqwypclzbfanjdmwpc.supabase.co",
+    "mcp_scope": "project",
+    "fallback": "local_json_and_versioned_migrations"
   }
 }

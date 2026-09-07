@@ -14,7 +14,8 @@ All agent instructions, JSON keys, schema descriptions, and client-facing output
 - The current known campaigns are Volunteering and TSCP Marketplace. Treat these as initial configuration, not immutable facts.
 - LinkedIn is the initial priority platform, but the system must support additional platforms.
 - The versioned project repository is `https://github.com/adrianbutsos/p-tscp.git` on the `main` branch.
-- Supabase integration is pending the client's project reference. Do not connect to an unscoped Supabase account or guess a project reference.
+- Supabase is project-scoped to `hrbqwypclzbfanjdmwpc`. Do not connect to an unscoped Supabase account or use a different project without explicit instruction.
+- Supabase is the persistent database layer; keep schema changes in versioned migrations and retain local JSON as configuration fallback.
 
 ## MVP outcome
 

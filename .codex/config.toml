@@ -9,3 +9,6 @@ calendar_contract = "contracts/content-calendar.schema.json"
 
 [mcp_servers.notion]
 url = "https://mcp.notion.com/mcp"
+
+[mcp_servers.supabase]
+url = "https://mcp.supabase.com/mcp?project_ref=hrbqwypclzbfanjdmwpc"

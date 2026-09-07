@@ -117,4 +117,4 @@ Administration page: `https://app.notion.com/p/3d4005c30a7d813fbb29ce01e4263f24?
 
 ## 12. Repository and Supabase Integration
 
-The project is versioned at `https://github.com/adrianbutsos/p-tscp.git` on the `main` branch. Supabase is intentionally not configured until its project reference is supplied; once available, configure a project-scoped, read-only MCP URL and authenticate it with Codex OAuth.
+The project is versioned at `https://github.com/adrianbutsos/p-tscp.git` on the `main` branch. Supabase is project-scoped to `hrbqwypclzbfanjdmwpc`. Database schema changes belong in versioned `supabase/migrations/` files, while local JSON remains the fallback for configuration. The MCP is project-scoped; enable only the feature groups required by the current workflow.
